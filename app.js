@@ -13,7 +13,7 @@ let scores, roundScore, activePlayer, dice;
 
 scores = [0, 0];
 roundScore = 0;
-activePlayer = 1;
+activePlayer = 0;
 
 document.querySelector('#current-' + activePlayer).textContent = dice;
 // document.querySelector('#current-' + activePlayer).innerHTML =
@@ -38,5 +38,28 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
   diceDOM.src = './images/dice-' + dice + '.png';
 
   // Update the round score IF the rolled number was NOT a 1
+  if (dice !== 1) {
+    // Add score
+    roundScore += dice;
+    document.querySelector('#current-' + activePlayer).textContent = roundScore;
+  } else {
+    // Next player
+    activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+    // Set round score back to 0
+    roundScore = 0;
+
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '1';
+
+    // Remove active class
+    // document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+
+    // Add active class to player
+    // document.querySelector('.player-1-panel').classList.add('active');
+
+    document.querySelector('.dice').style.display = 'none';
+  }
 });
 1;
