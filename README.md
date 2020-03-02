@@ -1,5 +1,6 @@
 ## Pig Dice game
 A game of dice created with HTML5, CSS3, & vanilla JavaScript.
+Play the game: https://jspigdicegame.netlify.com/
 
 ## GAME RULES
 
