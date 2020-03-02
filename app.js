@@ -15,6 +15,7 @@ scores = [0, 0];
 roundScore = 0;
 activePlayer = 1;
 
+// Calculate a random number
 dice = Math.floor(Math.random() * 6) + 1;
 console.log(dice);
 
